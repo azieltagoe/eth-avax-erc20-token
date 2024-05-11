@@ -13,6 +13,7 @@ Functions:
     - balanceOf: Returns a user's token balance.
     - transfer: Transfers tokens from one address to another.
     - approve: Approves an address to spend tokens on behalf of another address.
+    -burn: Allows every token holder to burn tokens 
     - allowance: Returns the remaining allowance for a spender.
     - transferFrom: Transfers tokens from one address to another, using approved allowances.
 
