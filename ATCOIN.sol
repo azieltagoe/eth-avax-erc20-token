@@ -55,6 +55,13 @@ contract ATCOIN {
 
 }
 
+    function burn(address, uint256 value) public  returns (bool success){
+        require(balances[msg.sender] >= value, "Insufficient tokens");
+        balances[msg.sender] -= value;
+        totalSupply -= value;
+        return true;
+    }
+
 contract mintable is ATCOIN {
 
     function mint(address reciepient, uint value) public returns (bool) {
