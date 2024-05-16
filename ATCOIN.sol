@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.18;
+pragma solidity 0.8.20;
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract ATCOIN {
 
@@ -9,6 +11,8 @@ contract ATCOIN {
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
+
+
 
 
     uint public totalSupply = 0;
@@ -53,14 +57,15 @@ contract ATCOIN {
         return true;
     }
 
-}
-
     function burn(address, uint256 value) public  returns (bool success){
         require(balances[msg.sender] >= value, "Insufficient tokens");
         balances[msg.sender] -= value;
         totalSupply -= value;
         return true;
     }
+
+
+}
 
 contract mintable is ATCOIN {
 
